@@ -4,7 +4,7 @@
     --bg-white: #FFFFFF;
     --text-dark: #1a1a1a;
     --text-muted: #555555;
-    --nav-bg: #000000; 
+    --nav-bg: #1B365D; 
 }
 
 body, html {
@@ -34,7 +34,7 @@ body, html {
 
 /* Main Layout (Index) */
 .main-container { max-width: 1300px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 350px 1fr; gap: 40px; }
-.latest-stories-header { font-size: 1.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; padding-left: 15px; border-left: 4px solid var(--sps-gold); }
+.latest-stories-header { font-size: 1.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; padding-left: 15px; border-left: 4px solid var(--sps-blue); }
 .story-list { display: flex; flex-direction: column; gap: 25px; }
 .story-item { display: flex; gap: 15px; align-items: flex-start; }
 .story-thumb { width: 100px; height: 100px; background-color: #ddd; flex-shrink: 0; object-fit: cover; }
