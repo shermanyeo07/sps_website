@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPS | About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="SPS-Logo.png" alt="SPS Logo">
+                    <img src="SPS-30-Logo.png" alt="SPS 30 Logo">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="about.html" class="active">About Us</a>
+                <a href="#">Admissions</a>
+                <a href="#">Current Students</a>
+                <a href="#">Alumni</a>
+            </div>
+        </div>
+        <div class="nav-links">
+            <div class="social-icons">
+                <a href="https://facebook.com/nussps/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/sps_nus/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <a href="#">Sign In</a>
+            <a href="#" style="background: var(--sps-gold); padding: 8px 15px; color: #000; font-weight: bold;">Contact Us</a>
+        </div>
+    </nav>
+
+    <section class="hero-banner" style="background-image: url('homepage.JPG');">
+        <h1>About Us</h1>
+    </section>
+
+    <section class="polygon-container">
+        <div class="polygon-img">
+            <img src="SPS-Logo.png" alt="About SPS Placeholder">
+        </div>
+        <div>
+            <h2 style="color: var(--nav-bg); font-size: 2rem; margin-top: 0;">Who We Are</h2>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: var(--text-muted);">
+                The Special Programme in Science (SPS) is an intense academic programme directed at engaging undergraduates in scientific research. 
+            </p>
+        </div>
+    </section>
+
+    <section class="encyclopedia-section">
+        <h2 class="encyclopedia-header">Our Mentors</h2>
+        
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterMentors('all')">All Mentors</button>
+            <button class="filter-btn" onclick="filterMentors('head')">Head Mentors</button>
+            <button class="filter-btn" onclick="filterMentors('junior')">Junior Mentors</button>
+            <button class="filter-btn" onclick="filterMentors('senior')">Senior Mentors</button>
+            <button class="filter-btn" onclick="filterMentors('graduate')">Graduate Mentors</button>
+        </div>
+
+        <div class="mentor-grid" id="mentor-grid">
+            
+            <div class="mentor-card" data-category="junior">
+                <img src="SPS-Logo.png" alt="Mentor">
+                <div class="mentor-overlay">
+                    <div class="mentor-name">Sherman Yeo</div>
+                    <div class="mentor-details">
+                        <p><strong>Role:</strong> Junior Mentor</p>
+                        <p><strong>Major:</strong> Data Science and Analytics</p>
+                        <p><strong>Interests:</strong> Everything</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mentor-card" data-category="senior">
+                <img src="SPS-Logo.png" alt="Mentor">
+                <div class="mentor-overlay">
+                    <div class="mentor-name">Terence Tan</div>
+                    <div class="mentor-details">
+                        <p><strong>Role:</strong> Senior Mentor</p>
+                        <p><strong>Major:</strong> Data Science and Analytics | Life Sciences</p>
+                        <p><strong>Interests:</strong> Human Ageing, Statistics, Modelling</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mentor-card" data-category="graduate">
+                <img src="SPS-Logo.png" alt="Mentor">
+                <div class="mentor-overlay">
+                    <div class="mentor-name">Alefiya Dohadwala</div>
+                    <div class="mentor-details">
+                        <p><strong>Role:</strong> Graduate Mentor</p>
+                        <p><strong>Major:</strong> Life Sciences</p>
+                        <p><strong>Interests:</strong> Synthetic Biology</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mentor-card" data-category="head">
+                <img src="SPS-Logo.png" alt="Mentor">
+                <div class="mentor-overlay">
+                    <div class="mentor-name">Zhen Ting Kow</div>
+                    <div class="mentor-details">
+                        <p><strong>Role:</strong> Head Mentor</p>
+                        <p><strong>Major:</strong> Chemistry</p>
+                        <p><strong>Interests:</strong> Computational Chemistry</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        function filterMentors(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.mentor-card');
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                
+                // Always show if it's a head mentor, or if 'all' is selected, or if the category matches
+                if (cardCategory === 'head' || category === 'all' || cardCategory === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
